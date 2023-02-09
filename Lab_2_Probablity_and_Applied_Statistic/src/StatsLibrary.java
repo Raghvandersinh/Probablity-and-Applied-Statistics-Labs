@@ -4,7 +4,8 @@ import java.lang.Math;
 /**
  * 
  * @author Raghvandersinh Solanki
- *	Contains methods that finds mean, median mode, and standard deviation.
+ *	Contains methods that finds mean, median mode, standard deviation, permutation, and
+ *	Combinations.
  */
 
 public class StatsLibrary {
@@ -137,7 +138,30 @@ public class StatsLibrary {
 		double variance = sumNewMean / (temp.size() - 1);
 		stnDeviation = Math.sqrt(variance);
 		return stnDeviation;
-
 	}
+	
+	public double getPermutation(int sampleSpace, int options)
+	{
+		int r = sampleSpace - options;
+		double permutation = getFactorial(sampleSpace)/getFactorial(r);
+		return permutation;
+	}
+	public double getCombination(int sampleSpace, int options)
+	{
+		int r = sampleSpace - options;
+		double combination = getFactorial(sampleSpace)/(getFactorial(r) * getFactorial(options));		
+		return combination;
+	}
+	public double getFactorial(int input1)
+	{
+		double factorial = 1;
+		for(int i = 1; i <= input1; i++)
+		{
+			factorial *= i;
+		}
+		
+		return factorial;
+	}
+	
 
 }
