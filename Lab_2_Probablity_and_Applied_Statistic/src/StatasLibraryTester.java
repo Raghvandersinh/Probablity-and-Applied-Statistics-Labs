@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.math.BigInteger;
 public class StatasLibraryTester {
 
 	public static void main(String[] args) {
@@ -25,11 +25,9 @@ public class StatasLibraryTester {
 		System.out.println("Median: " + median);
 		test.mode(someNumbers);
 		System.out.println("Standard Deviation: " + standardDeviation);
-		double perma = test.getPermutation(50, 3);
-		double comba = test.getCombination(8, 4);
-		System.out.printf("Permutation: %.1f\n", perma);
-		System.out.printf("Combination: %.1f\n",  comba);
-		System.out.printf("Factorial: %.1f\n", test.getFactorial(54));
+		test.getCombination(5, 2);
+		test.getPermutation(5, 2);
+		
 		
 	}
 

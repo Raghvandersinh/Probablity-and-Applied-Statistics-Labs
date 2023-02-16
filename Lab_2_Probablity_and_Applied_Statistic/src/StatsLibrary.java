@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.lang.Math;
-
+import java.math.BigInteger;
 /**
  * 
  * @author Raghvandersinh Solanki
@@ -139,27 +139,46 @@ public class StatsLibrary {
 		stnDeviation = Math.sqrt(variance);
 		return stnDeviation;
 	}
-	
-	public double getPermutation(int sampleSpace, int options)
+	/**
+	 * gets a permutation number
+	 * @param sampleSpace: enter a sample space.
+	 * @param options: enter number of object selected.
+	 */
+	public void getPermutation(int sampleSpace, int objectSelected)
 	{
-		int r = sampleSpace - options;
-		double permutation = getFactorial(sampleSpace)/getFactorial(r);
-		return permutation;
+		BigInteger r = getFactorial(sampleSpace - objectSelected);
+		BigInteger permutation = getFactorial(sampleSpace).divide(r);
+		System.out.println("Permutation: " + permutation);
 	}
-	public double getCombination(int sampleSpace, int options)
+	/**
+	 * gets a combination number
+	 * @param sampleSpace: enter a sample space.
+	 * @param options: enter number of object selected.
+	 */
+	public void getCombination(int sampleSpace, int options)
 	{
-		int r = sampleSpace - options;
-		double combination = getFactorial(sampleSpace)/(getFactorial(r) * getFactorial(options));		
-		return combination;
+		BigInteger r = getFactorial(sampleSpace - options);
+		BigInteger combination = getFactorial(sampleSpace).divide((r.multiply(getFactorial(options))));		
+		System.out.println("Combination: " + combination);
 	}
-	public double getFactorial(int input1)
+	/**
+	 * gets a factorial number.
+	 * @param input1: enter a number that you want to get factorial of
+	 * Citation:
+	 * I was lost on how to loop through a BigInteger, but I simply had to reassign the
+	 * factorial variable to a new value. 
+	 * https://www.youtube.com/watch?v=UD8rCe_QVOE
+	 */
+	public BigInteger getFactorial(int input1)
 	{
-		double factorial = 1;
+		BigInteger factorial = BigInteger.ONE;
+		
 		for(int i = 1; i <= input1; i++)
 		{
-			factorial *= i;
+			long iToLong = i;
+			BigInteger iValue = BigInteger.valueOf(iToLong);
+			factorial = factorial.multiply(iValue);
 		}
-		
 		return factorial;
 	}
 	
