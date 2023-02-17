@@ -34,22 +34,6 @@ public class SetOperation<E> {
 		return intersectionList;
 	}
 	
-	public ArrayList<E> intersectionTest(ArrayList<E> setA, ArrayList<E> setB)
-	{
-		ArrayList<E> setC = new ArrayList<E>();
-		for(int i = 0; i < setA.size(); i++)
-		{
-			for(int j = 0; j < setB.size(); j++)
-			{
-				System.out.println(setA.size());
-				if(setA.get(i) == setB.get(j))
-				{
-					setC.add(setB.get(j));
-				}
-			}
-		}
-		return setC;
-	}
 	/**
 	 * gets the union of two ArrayList
 	 * @param setA -  ArrayList SetA
