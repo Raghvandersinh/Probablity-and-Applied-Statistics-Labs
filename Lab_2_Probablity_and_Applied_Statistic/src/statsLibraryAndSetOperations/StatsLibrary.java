@@ -2,11 +2,12 @@ package statsLibraryAndSetOperations;
 import java.util.ArrayList;
 import java.lang.Math;
 import java.math.BigInteger;
+import java.math.BigDecimal;
 /**
  * 
  * @author Raghvandersinh Solanki
- *	Contains methods that finds mean, median mode, standard deviation, permutation, and
- *	Combinations.
+ *	Contains methods that finds mean, median mode, standard deviation, permutation,
+ *	Combinations, Factorial, and Binomial distribution
  */
 
 public class StatsLibrary {
@@ -145,22 +146,22 @@ public class StatsLibrary {
 	 * @param sampleSpace: enter a sample space.
 	 * @param options: enter number of object selected.
 	 */
-	public void getPermutation(int sampleSpace, int objectSelected)
+	public BigInteger getPermutation(int sampleSpace, int objectSelected)
 	{
 		BigInteger r = getFactorial(sampleSpace - objectSelected);
 		BigInteger permutation = getFactorial(sampleSpace).divide(r);
-		System.out.println("Permutation: " + permutation);
+		return permutation;
 	}
 	/**
 	 * gets a combination number
 	 * @param sampleSpace: enter a sample space.
 	 * @param options: enter number of object selected.
 	 */
-	public void getCombination(int sampleSpace, int options)
+	public BigInteger getCombination(int sampleSpace, int options)
 	{
 		BigInteger r = getFactorial(sampleSpace - options);
 		BigInteger combination = getFactorial(sampleSpace).divide((r.multiply(getFactorial(options))));		
-		System.out.println("Combination: " + combination);
+		return combination;
 	}
 	/**
 	 * gets a factorial number.
@@ -182,6 +183,25 @@ public class StatsLibrary {
 		}
 		return factorial;
 	}
-	
+	/**
+	 * gets a binomial distribution number
+	 * @param sampleSpace: enter the sample space
+	 * @param success: probability of success
+	 * @param failure: probability of failure
+	 * @param option: enter the number of object selected
+	 * I didn't know how to turn a BigInteger into a double, I searched it up and found that
+	 * I can use BigDecimal from stackOverflow.
+	 * https://stackoverflow.com/questions/13105905/is-it-possible-to-multiple-a-biginteger-by-a-double-in-java
+	 */
+	public BigDecimal getBinomialDistribution(int sampleSpace,double success, double failure, int option)
+	{
+		BigDecimal combination = new BigDecimal(getCombination(sampleSpace, option));
+		double variableSuccess = Math.pow(success, option);
+		double variableFailure = Math.pow(failure, sampleSpace - option);
+		combination = combination.multiply(new BigDecimal(variableSuccess));
+		combination = combination.multiply(new BigDecimal(variableFailure));
+		return combination;
+		
+	}
 
 }

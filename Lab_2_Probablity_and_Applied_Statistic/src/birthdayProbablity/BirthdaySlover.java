@@ -71,7 +71,7 @@ public class BirthdaySlover {
 		return doesSomeoneHaveTheSameBirthday;
 	}
 	/**
-	 * shows us the chance that at least one person in the room share the same 
+	 * shows us the probability that at least one person in the room share the same 
 	 * birthday in the list.
 	 * @return returns a percentage of chance that a person will share a birthday 
 	 * with another.
