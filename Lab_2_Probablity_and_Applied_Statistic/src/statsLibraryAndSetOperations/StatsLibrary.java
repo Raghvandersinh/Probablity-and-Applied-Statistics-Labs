@@ -203,5 +203,22 @@ public class StatsLibrary {
 		return combination;
 		
 	}
+	/**
+	 * gets a geometric distribution number 
+	 * @param numberOfFailure: number of failure till we get a success
+	 * @param failure: probability of failure
+	 * @param success: probability of success
+	 * @return returns a geometric distribution number..
+	 */
+	public double getGeometricDistribution(int numberOfFailure, double failure, double success)
+	{
+		double constantFail = failure;
+		for(int i = 0; i < numberOfFailure - 1; i++)
+		{
+			failure *= constantFail;
+		}
+		double geometricDistribution = failure * success;
+		return geometricDistribution;
+	}
 
 }
