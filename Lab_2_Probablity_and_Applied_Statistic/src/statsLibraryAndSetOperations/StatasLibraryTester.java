@@ -29,6 +29,8 @@ public class StatasLibraryTester {
 		System.out.println("Combination: " + test.getCombination(4,1));
 		System.out.println("Permutation: " + test.getPermutation(5, 2));
 		System.out.printf("Binomial Distribution: %.4f ", test.getBinomialDistribution(10, 0.80, 0.20, 7));
+		System.out.printf("\nGeometric Distribution %.4f\n ", test.getGeometricDistribution(3, 0.83, 0.16));
+
 		
 		
 		
