@@ -22,7 +22,7 @@ public class SetOperation<E> {
 		{
 			for(int j = 0; j < setB.size(); j++)
 			{
-				System.out.println(setA.size());
+				
 				if(setA.get(i) == setB.get(j) && !(intersectionList.contains(setA.get(i))))
 				{
 					
