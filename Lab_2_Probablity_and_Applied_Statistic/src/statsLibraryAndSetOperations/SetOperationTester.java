@@ -54,10 +54,6 @@ public class SetOperationTester {
 		{
 			System.out.print(c + " ");
 		}
-		//System.out.println("\nIntersection Test " + op.intersectionTest(subSetA, subSetB));
-		System.out.println("\nUnion " + op.union(subSetA, subSetB));
-		System.out.println("\nComplement " + op.complement(subSetA, subSetB));
-		System.out.println("\nIntersection " + op.intersection(subSetA, subSetB));
 		
 		
 		
