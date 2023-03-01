@@ -26,6 +26,7 @@ public class StatasLibraryTester {
 		System.out.println("Median: " + median);
 		test.mode(someNumbers);
 		System.out.printf("Standard Deviation: %.4f\n" , standardDeviation);
+		System.out.println("Factorial: " + test.getFactorial(10));
 		System.out.println("Combination: " + test.getCombination(4,1));
 		System.out.println("Permutation: " + test.getPermutation(5, 2));
 		System.out.printf("Binomial Distribution: %.4f ", test.getBinomialDistribution(10, 0.80, 0.20, 7));
